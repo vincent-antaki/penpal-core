@@ -25,7 +25,9 @@ Renderable = Union[BaseGeometry, StyledGeometry, Layer]
 def render_svg(items: Iterable[Renderable], width: float, height: float, stroke_width: float = 1, fill: str = 'none', stroke: str = 'black', bg_color: str = 'white') -> draw.Drawing:
     """Renders a list of shapely geometries, StyledGeometries, or Layers to a drawsvg Drawing."""
     d = draw.Drawing(width, height, origin=(0, 0))
-    d.append(draw.Rectangle(0, 0, width, height, fill=bg_color))
+
+    if bg_color is not None:
+        d.append(draw.Rectangle(0, 0, width, height, fill=bg_color))
 
     default_style = Style(stroke=stroke, stroke_width=stroke_width, fill=fill)
 

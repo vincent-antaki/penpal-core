@@ -10,7 +10,9 @@ requires-python = ">=3.12"
 dependencies = [
     "drawsvg>=2.4.1",
     "numpy>=2.4.2",
+    "pyserial>=3.5",
     "shapely>=2.1.2",
+    "vpype[all]>=1.15.0",
 ]
 
 [build-system]
